@@ -189,8 +189,8 @@ main {
 
 /* New container for the profile picture */
 .profile-pic-container {
-  background-color: #5db1ff; /* Background color around the image */
-  padding: 20px; /* Space around the image */
+  background: linear-gradient(120deg, #5db1ff, #dc3545, #5db1ff);
+  padding: 5px; /* Space around the image */
   border-radius: 50%; /* Makes the background container circular */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
 }
@@ -201,7 +201,6 @@ main {
   height: 450px; /* Set the height */
   object-fit: cover; /* Ensures the image covers the area and maintains aspect ratio */
   transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for filter and transform effects */
-  filter: grayscale(100%); /* Default to grayscale */
   border-radius: 50%;
 }
 
@@ -249,7 +248,7 @@ footer p:last-of-type {
   font-weight: bold;
 }
 
-        @media (max-width: 375px) {
+@media (max-width: 375px) {
   body {
     font-size: 14px; /* Adjust global font size for smaller screens */
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -354,4 +353,108 @@ footer p:last-of-type {
   }
 }
 
+@media (max-width: 440px) {
+  body {
+    font-size: 14px; /* Adjust global font size for smaller screens */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  header {
+    padding: 10px; /* Reduce padding for small screens */
+  }
+
+  nav {
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    padding: 10px 10px; /* Adjust padding for smaller screens */
+  }
+
+  nav ul {
+    display: none; /* Hide the navigation menu by default */
+    flex-direction: column; /* Stack menu items vertically */
+    gap: 10px; /* Reduce gap between items */
+    position: absolute;
+    top: 60px; /* Position menu below the header */
+    right: 10px; /* Adjust position */
+    background: #ffffff; /* Ensure the menu has a visible background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for visibility */
+    width: 85%; /* Adjust menu width */
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+
+  nav ul.active {
+    display: flex; /* Show menu when active */
+  }
+
+  nav .menu-toggle {
+    display: flex; /* Show hamburger menu icon */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  nav .menu-toggle .bar {
+    width: 20px; /* Smaller width for hamburger bars */
+    height: 2px;
+    background-color: #dc3545;
+  }
+
+  nav ul li a {
+    font-size: 16px; /* Adjust font size for menu items */
+  }
+
+  nav .logo {
+    font-size: 24px; /* Adjust logo size for smaller screens */
+  }
+
+  main {
+    flex-direction: column; /* Stack main content vertically */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Center-align text */
+    padding: 20px;
+  }
+
+  .intro {
+    max-width: 100%; /* Allow intro to take full width */
+    padding: 0;
+  }
+
+  .intro h2 {
+    font-size: 24px; /* Reduce font size */
+  }
+
+  .intro h2 span.h2,
+  .intro h2 span.h22 {
+    font-size: 40px; /* Reduce gradient text size */
+  }
+
+  .profile-pic-container {
+    padding: 10px; /* Reduce padding around profile picture */
+  }
+
+  .profile-pic img {
+    width: 200px; /* Reduce profile picture size */
+    height: 200px;
+  }
+
+  .cta-button {
+    font-size: 14px; /* Adjust button text size */
+    padding: 10px 20px; /* Adjust button padding */
+    margin-top: 20px; /* Add spacing */
+  }
+
+  footer {
+    padding: 10px; /* Reduce padding */
+    font-size: 12px; /* Adjust footer font size */
+  }
+
+  .social-links {
+    gap: 10px; /* Reduce gap between social links */
+  }
+
+  .social-links i {
+    font-size: 12px; /* Adjust icon size */
+  }
+}
 
