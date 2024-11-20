@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 header {
@@ -249,56 +250,108 @@ footer p:last-of-type {
 }
 
 /* Responsive styles for smaller screens (e.g., iPhone SE) */
+/* Responsive styles for smaller screens (e.g., iPhone SE) */
 @media (max-width: 375px) {
+  body {
+    font-size: 14px; /* Adjust global font size for smaller screens */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  header {
+    padding: 10px; /* Reduce padding for small screens */
+  }
+
+  nav {
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    padding: 10px 10px; /* Adjust padding for smaller screens */
+  }
+
   nav ul {
-    display: none; /* Hide menu by default on small screens */
+    display: none; /* Hide the navigation menu by default */
     flex-direction: column; /* Stack menu items vertically */
-    gap: 20px;
+    gap: 10px; /* Reduce gap between items */
     position: absolute;
-    top: 60px;
-    right: 20px;
-    background: #ffffff; /* Ensure background is consistent */
-    padding: 20px;
+    top: 60px; /* Position menu below the header */
+    right: 10px; /* Adjust position */
+    background: #ffffff; /* Ensure the menu has a visible background */
+    padding: 15px;
     border-radius: 10px;
-    width: 100%; /* Full width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for visibility */
+    width: 85%; /* Adjust menu width */
+    z-index: 1000; /* Ensure it appears above other content */
   }
 
   nav ul.active {
     display: flex; /* Show menu when active */
   }
 
-  nav .logo {
-    font-size: 30px;
+  nav .menu-toggle {
+    display: flex; /* Show hamburger menu icon */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  nav .menu-toggle .bar {
+    width: 20px; /* Smaller width for hamburger bars */
+    height: 2px;
+    background-color: #dc3545;
   }
 
   nav ul li a {
-    font-size: 18px; /* Smaller font size for menu items */
+    font-size: 16px; /* Adjust font size for menu items */
   }
 
-  .menu-toggle {
-    display: flex; /* Show hamburger menu icon */
+  nav .logo {
+    font-size: 24px; /* Adjust logo size for smaller screens */
+  }
+
+  main {
+    flex-direction: column; /* Stack main content vertically */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Center-align text */
+    padding: 20px;
   }
 
   .intro {
-    max-width: 100%; /* Full width for intro section */
-    text-align: center; /* Center align text */
+    max-width: 100%; /* Allow intro to take full width */
+    padding: 0;
   }
 
   .intro h2 {
-    font-size: 28px; /* Smaller font size for headings */
+    font-size: 24px; /* Reduce font size */
+  }
+
+  .intro h2 span.h2,
+  .intro h2 span.h22 {
+    font-size: 40px; /* Reduce gradient text size */
+  }
+
+  .profile-pic-container {
+    padding: 10px; /* Reduce padding around profile picture */
   }
 
   .profile-pic img {
-    width: 300px; /* Smaller image size */
-    height: 300px; /* Smaller image size */
+    width: 200px; /* Reduce profile picture size */
+    height: 200px;
   }
 
   .cta-button {
-    font-size: 14px; /* Smaller button font size */
-    padding: 8px 16px; /* Adjust button padding */
+    font-size: 14px; /* Adjust button text size */
+    padding: 10px 20px; /* Adjust button padding */
+    margin-top: 20px; /* Add spacing */
   }
 
   footer {
-    padding: 10px; /* Reduce footer padding */
+    padding: 10px; /* Reduce padding */
+    font-size: 12px; /* Adjust footer font size */
+  }
+
+  .social-links {
+    gap: 10px; /* Reduce gap between social links */
+  }
+
+  .social-links i {
+    font-size: 12px; /* Adjust icon size */
   }
 }
