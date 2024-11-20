@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Varann - Sovannra Sidet Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  </head>
+  </head>
+  <style>
+    .intro-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(45deg, #dc3545, #5db1ff);
+      color: white;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .intro-content h1 {
+      font-size: 48px;
+      margin: 0;
+      animation: slideIn 1s ease-out;
+    }
+
+    .intro-content p {
+      font-size: 24px;
+      margin: 20px 0;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .skip-intro {
+      position: absolute;
+      bottom: 30px;
+    }
+
+    .skip-intro a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+  </style>
+  <body>
+    <div class="intro-container">
+      <div class="intro-content">
+        <h1>Welcome to VARANN's Portfolio</h1>
+        <p>Where LADIN IS GLASSES XD</p>
+      </div>
+      <div class="skip-intro">
+        <a href="#" id="skip-intro">Skip Intro</a>
+      </div>
+    </div>
+    <header>
+      <nav>
+        <div class="logo"><a href="">VARANN.</a></div>
+        <div class="menu-toggle" id="menuToggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="intro">
+        <h2>Hey there!!</h2>
+        <h2>I'm</h2>
+        <h2>
+          <span class="h2">SIDET</span><br /><span class="h22">SOVANNRA</span>
+        </h2>
+        <div class="typing-container">
+          <span class="typing"></span>
+        </div>
+        <p>
+          As a developer, I bring a unique blend of front-end and back-end skill
+          and a passion for you. Let's connect and turn ideas into reality.
+          Ready to embark on a journey of innovation together?
+        </p>
+        <a href="contact.html">
+          <button class="cta-button">
+            <span>Contact Me</span>
+          </button>
+                  </a>
+      </div>
+
+      <div class="profile-pic-container">
+        <div class="profile-pic">
+          <img src="images/images.jpg" alt="Profile Picture" />
+        </div>
+      </div>
+    </main>
+    <!-- <p>
+      Welcome to VARANN’s portfolio, where creativity meets expertise. As a
+      developer, I bring a unique blend of front-end and back-end skill and a
+      passion for you. Let's connect and turn ideas into reality. Ready to
+      embark on a journey of innovation together?
+    </p> -->
+
+    <footer>
+      <div class="social-links">
+        <a href="https://web.facebook.com/raaa4444/" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <!-- <a href="https://github.com/varannnn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a> -->
+        <!-- <a href="https://x.com/TapCoRxa" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a> -->
+        <a href="https://www.instagram.com/iamsidetsovannra/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://t.me/v4nnr44" aria-label="Instagram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://oraclemyportfolio.netlify.app" aria-label="Instagram"><i class="fa-solid fa-globe"></i></a>
+
+      </div>
+
+      <p>&copy; 2024 Developed by Sovannra Sidet & Collaborated with GPT-4o</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

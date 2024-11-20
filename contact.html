@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Varann - Sovannra Sidet Portfolio</title>
+    <link rel="stylesheet" href="styles1.css" />
+  </head>
+  <style>
+    .intro-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(45deg, #dc3545, #5db1ff);
+      color: white;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .intro-content h1 {
+      font-size: 48px;
+      margin: 0;
+      animation: slideIn 1s ease-out;
+    }
+
+    .intro-content p {
+      font-size: 24px;
+      margin: 20px 0;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .skip-intro {
+      position: absolute;
+      bottom: 30px;
+    }
+
+    .skip-intro a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+  </style>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><a href="">VARANN.</a></div>
+        <div class="menu-toggle" id="menuToggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="intro">
+        <h2>Hey there!!</h2>
+        <h2>I'm</h2>
+        <h2>
+          <span class="h2">SIDET</span><br /><span class="h22">SOVANNRA</span>
+        </h2>
+        <div class="typing-container">
+          <span class="typing"></span>
+        </div>
+        <p>
+          As a developer, I bring a unique blend of front-end and back-end skill
+          and a passion for you. Let's connect and turn ideas into reality.
+          Ready to embark on a journey of innovation together?
+        </p>
+        <button class="cta-button">Get in Touch</button>
+      </div>
+
+      <div class="profile-pic-container">
+        <div class="profile-pic">
+          <img src="images/image.png" alt="Profile Picture" />
+        </div>
+      </div>
+    </main>
+    <!-- <p>
+      Welcome to VARANN’s portfolio, where creativity meets expertise. As a
+      developer, I bring a unique blend of front-end and back-end skill and a
+      passion for you. Let's connect and turn ideas into reality. Ready to
+      embark on a journey of innovation together?
+    </p> -->
+
+    <footer>
+      <div class="social-links">
+        <a href="#"
+          ><img
+            src="https://cdn-icons-png.flaticon.com/512/2175/2175193.png"
+            alt="Facebook"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+            alt="GitHub"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-black-icon.png"
+            alt="Twitter"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png"
+            alt="Instagram"
+        /></a>
+      </div>
+      <!-- <div class="social-links">
+        
+        <a href="#"
+          ><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXN9xSEe8unzPBEQOeAKXd9Q55efGHGB9BA&s"
+            alt="Facebook"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png"
+            alt="GitHub"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://img.freepik.com/free-vector/twitter-app-new-logo-x-black-background_1017-45425.jpg"
+            alt="Twitter"
+        /></a>
+        <a href="#"
+          ><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/640px-Instagram_logo_2022.svg.png"
+            alt="Instagram"
+        /></a>
+      </div> -->
+
+      <p>&copy; 2024 Developed by Sovannra Sidet & Collaborated with GPT-4o</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

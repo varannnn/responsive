@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Effect</title>
+    <style>
+      .typing-container {
+        font-family: monospace;
+        font-size: 24px;
+        white-space: nowrap;
+        display: inline-block; /* Ensure container doesn't stretch */
+      }
+      .typing {
+        display: inline; /* Keep text inline */
+        border-right: 2px solid; /* Optional cursor effect */
+        padding-right: 5px; /* Space for the cursor */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="typing-container">
+      <main>
+        <div class="intro">
+          <h2>Hey there,</h2>
+          <h2>I’m</h2>
+          <h2>SOVANNRA SIDET</h2>
+          <h3 class="typing"></h3>
+          <hr />
+          <button class="cta-button">Let’s talk</button>
+        </div>
+        <div class="profile-pic">
+          <img src="images/image.png" alt="Sovannra Sidet" />
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const words = [
+        "Backend Developer",
+        "Frontend Developer",
+        "Full Stack Developer",
+      ];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let currentWord = words[wordIndex];
+      const typingElement = document.querySelector(".typing");
+
+      function typeEffect() {
+        if (charIndex < currentWord.length) {
+          typingElement.innerHTML += currentWord.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else {
+          setTimeout(deleteEffect, 1000); // Pause before deleting
+        }
+      }
+
+      function deleteEffect() {
+        if (charIndex > 0) {
+          typingElement.innerHTML = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(deleteEffect, 50);
+        } else {
+          wordIndex = (wordIndex + 1) % words.length; // Move to the next word
+          currentWord = words[wordIndex];
+          setTimeout(typeEffect, 500); // Pause before typing the next word
+        }
+      }
+
+      window.onload = typeEffect;
+    </script>
+  </body>
+</html>

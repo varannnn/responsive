@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Website Intro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Arial", sans-serif;
+      overflow: hidden; /* Prevent scrolling during intro */
+    }
+
+    .intro-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(45deg, #dc3545, #5db1ff);
+      color: white;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .intro-content h1 {
+      font-size: 48px;
+      margin: 0;
+      animation: slideIn 1s ease-out;
+    }
+
+    .intro-content p {
+      font-size: 24px;
+      margin: 20px 0;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .skip-intro {
+      position: absolute;
+      bottom: 30px;
+    }
+
+    .skip-intro a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    #main-content {
+      display: none;
+      opacity: 0;
+      animation: contentFadeIn 1s forwards;
+    }
+
+    #main-content.hidden {
+      display: none;
+    }
+
+    @keyframes contentFadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <body>
+    <div class="intro-container">
+      <div class="intro-content">
+        <h1>Welcome to My Website</h1>
+        <p>Where innovation meets creativity.</p>
+      </div>
+      <div class="skip-intro">
+        <a href="#" id="skip-intro">Skip Intro</a>
+      </div>
+    </div>
+
+    <main id="main-content" class="hidden">
+      <header>
+        <nav>
+          <div class="logo">MY LOGO</div>
+          <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section>
+        <h2>Main Website Content</h2>
+        <p>Here is where your website content goes.</p>
+      </section>
+    </main>
+
+    <script src="script1.js"></script>
+  </body>
+</html>

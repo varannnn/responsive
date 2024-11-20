@@ -1,0 +1,249 @@
+/* Base styles */
+body {
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+header {
+  padding: 20px 0;
+  background: #ffffff; /* Ensures header background is consistent */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Matches the width of the main section */
+  margin: 0 auto;
+  padding: 0 20px;
+  border-radius: 30px 30px 34px 34px;
+  background: #ffffff; /* Ensures background is consistent */
+}
+
+nav .logo {
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #dc3545, #5db1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  font-size: 20px;
+  position: relative;
+  color: #dc3545; /* Default text color */
+  text-decoration: none; /* Remove default underline */
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #5db1ff; /* Text color on hover/active */
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust as needed */
+  height: 2px; /* Adjust as needed */
+  width: 100%;
+  background: linear-gradient(45deg, #dc3545, #5db1ff);
+  z-index: -1;
+}
+
+.menu-toggle {
+  display: none; /* Hide menu toggle by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  background-color: #dc3545;
+  height: 3px;
+  width: 25px;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Main content styling */
+main {
+  display: flex;
+  flex-direction: row; /* Arrange content in a row */
+  align-items: center;
+  justify-content: space-between; /* Distribute space evenly between items */
+  padding: 50px 20px;
+  width: 100%;
+  max-width: 1200px; /* Match the width of the header */
+  margin: 0 auto; /* Center align main */
+}
+
+.intro {
+  max-width: 500px;
+  text-align: left; /* Align text to the left */
+}
+
+.intro h2 {
+  font-size: 36px;
+  margin: 0;
+  color: #333333;
+}
+
+.intro h2 span.h2 {
+  font-size: 66px;
+  margin: 0;
+  background: linear-gradient(120deg, #dc3545, #5db1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Ensures text color is set by the gradient */
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.intro h2 span.h22 {
+  font-size: 66px;
+  margin: 0;
+  background: linear-gradient(120deg, #5db1ff, #dc3545);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Ensures text color is set by the gradient */
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.typing-container {
+  font-family: monospace;
+  font-size: 24px;
+  white-space: nowrap;
+  display: inline-block; /* Ensure container doesn't stretch */
+}
+
+.typing {
+  display: inline;
+  border-right: 2px solid #6c757d; /* Optional cursor effect */
+  padding-right: 5px; /* Space for the cursor */
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #dc3545, #5db1ff);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* New container for the profile picture */
+.profile-pic-container {
+  background-color: #5db1ff; /* Background color around the image */
+  padding: 20px; /* Space around the image */
+  border-radius: 50%; /* Makes the background container circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+}
+
+/* Image styling with hover effect */
+.profile-pic img {
+  width: 450px; /* Set the width */
+  height: 450px; /* Set the height */
+  object-fit: cover; /* Ensures the image covers the area and maintains aspect ratio */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for filter and transform effects */
+  filter: grayscale(100%); /* Default to grayscale */
+}
+
+.profile-pic img:hover {
+  filter: grayscale(0%); /* Show original color on hover */
+  transform: scale(1.3); /* Zoom in on hover */
+}
+
+footer {
+  width: 100%;
+  background-color: #f8f9fa; /* Light background color for contrast */
+  padding: 20px; /* Padding for content spacing */
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: #6c757d;
+}
+
+.social-links {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links img {
+  width: 15px;
+  height: 15px;
+}
+
+footer p:last-of-type {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+/* Responsive styles for smaller screens (e.g., iPhone SE) */
+@media (max-width: 375px) {
+  nav ul {
+    display: none; /* Hide menu by default on small screens */
+    flex-direction: column; /* Stack menu items vertically */
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #ffffff; /* Ensure background is consistent */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; /* Full width */
+  }
+
+  nav ul.active {
+    display: flex; /* Show menu when active */
+  }
+
+  nav .logo {
+    font-size: 30px;
+  }
+
+  nav ul li a {
+    font-size: 18px; /* Smaller font size for menu items */
+  }
+
+  .menu-toggle {
+    display: flex; /* Show hamburger menu icon */
+  }
+
+  .intro {
+    max-width: 100%; /* Full width for intro section */
+    text-align: center; /* Center align text */
+  }
+
+  .intro h2 {
+    font-size: 28px; /* Smaller font size for headings */
+  }
+
+  .profile-pic img {
+    width: 300px; /* Smaller image size */
+    height: 300px; /* Smaller image size */
+  }
+
+  .cta-button {
+    font-size: 14px; /* Smaller button font size */
+    padding: 8px 16px; /* Adjust button padding */
+  }
+
+  footer {
+    padding: 10px; /* Reduce footer padding */
+  }
+}
